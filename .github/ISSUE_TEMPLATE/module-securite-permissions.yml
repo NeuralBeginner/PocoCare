@@ -1,0 +1,100 @@
+name: "🔒 Module Sécurité & Permissions - Protection & Anti-tamper"
+description: "Template pour les tâches liées à la sécurité, permissions, audit et anti-tamper"
+title: "[SECURITE] "
+labels: ["module:securite", "security", "permissions", "audit"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔒 Module Sécurité & Permissions
+        
+        Template pour la sécurité, audit des permissions et protection anti-tamper
+
+  - type: dropdown
+    id: security_area
+    attributes:
+      label: "Domaine sécurité"
+      description: "Quelle zone de sécurité est concernée"
+      options:
+        - "🔐 Permissions et autorisations"
+        - "🕵️ Audit et trackers"
+        - "📱 Applications à risque"
+        - "🔍 Scan de sécurité"
+        - "🛡️ Anti-tamper et intégrité"
+        - "🔑 Cryptographie (Ed25519)"
+        - "📦 Sandbox et plugins"
+        - "🗑️ Purge sécurisée"
+        - "🏷️ Badge privacy/compliance"
+        - "📊 Monitoring signature"
+        - "🔗 Supply chain security"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: threat_level
+    attributes:
+      label: "Niveau de menace"
+      description: "Criticité de la vulnérabilité/fonctionnalité"
+      options:
+        - "🔴 Critique (données sensibles)"
+        - "🟠 Élevé (permissions système)"
+        - "🟡 Moyen (fonctionnalités normales)"
+        - "🟢 Bas (informatif/monitoring)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description sécurité"
+      description: "Détail de la fonctionnalité ou vulnérabilité"
+      placeholder: "Décrire le risque, l'impact, les données concernées..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "Implémentation technique"
+      description: "Approche technique pour la sécurité"
+      placeholder: "Algorithmes, APIs, librairies, patterns de sécurité..."
+
+  - type: checkboxes
+    id: security_features
+    attributes:
+      label: "Fonctionnalités sécurité"
+      description: "Cocher toutes les mesures de sécurité requises"
+      options:
+        - label: "Audit complet des permissions"
+        - label: "Détection de trackers"
+        - label: "Scan d'applications à risque"
+        - label: "Monitoring des changements"
+        - label: "Logs sécurisés et signés"
+        - label: "Notifications d'alertes sécurité"
+        - label: "SBOM (Software Bill of Materials)"
+        - label: "Code anti-tamper"
+        - label: "Cryptographie Ed25519"
+        - label: "Sandbox pour plugins"
+        - label: "Purge totale sécurisée"
+        - label: "Badge privacy visible"
+        - label: "Monitoring des signatures"
+        - label: "Contrôle supply chain"
+        - label: "Logs verbeux mode dev"
+        - label: "Gestion erreurs sécurité"
+        - label: "Mode simulation sécurité"
+        - label: "Reporting de conformité"
+
+  - type: textarea
+    id: compliance
+    attributes:
+      label: "Conformité réglementaire"
+      description: "Standards et réglementations à respecter"
+      placeholder: "RGPD, standards Android, best practices security..."
+
+  - type: textarea
+    id: testing_security
+    attributes:
+      label: "Tests de sécurité"
+      description: "Comment valider la sécurité"
+      placeholder: "Pentest, audit, fuzzing, tests automatisés..."

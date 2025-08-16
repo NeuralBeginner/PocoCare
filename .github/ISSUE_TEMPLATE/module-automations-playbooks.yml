@@ -1,0 +1,137 @@
+name: "🔄 Module Automations & Playbooks - Actions Automatisées"
+description: "Template pour les tâches liées aux automations et playbooks (scripts, actions, workflows)"
+title: "[AUTOMATION] "
+labels: ["module:automation", "playbooks", "workflows"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔄 Module Automations & Playbooks
+        
+        Template pour le développement des automations et playbooks YAML signés
+
+  - type: dropdown
+    id: automation_type
+    attributes:
+      label: "Type d'automation"
+      description: "Quelle catégorie d'automation"
+      options:
+        - "🧹 Nettoyage automatique (cache, logs, temp)"
+        - "⚡ Optimisation performance (CPU, RAM)"
+        - "🔋 Gestion batterie (économie, charge)"
+        - "🛡️ Actions sécurité (permissions, scan)"
+        - "📱 Configuration système (paramètres)"
+        - "🔔 Notifications et alertes"
+        - "📊 Collecte de données ciblée"
+        - "🔄 Maintenance préventive"
+        - "🚨 Réponse aux incidents"
+        - "📈 Optimisation proactive"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: execution_mode
+    attributes:
+      label: "Mode d'exécution"
+      description: "Comment l'automation sera déclenchée"
+      options:
+        - "⏰ Planifiée (cron-like)"
+        - "🎯 Sur événement/trigger"
+        - "🤚 Manuelle (utilisateur)"
+        - "🤖 Intelligence artificielle"
+        - "🚨 Sur seuil critique"
+        - "🔄 Continue/monitoring"
+        - "🏃 Au démarrage système"
+        - "⚠️ En cas d'erreur"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description de l'automation"
+      description: "Détail du processus et des objectifs"
+      placeholder: "Décrire précisément ce que fait l'automation, quand, comment et pourquoi..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: playbook_structure
+    attributes:
+      label: "Structure du Playbook YAML"
+      description: "Structure du playbook YAML signé"
+      placeholder: |
+        Ex:
+        playbook:
+          name: "battery_optimization"
+          version: "1.0"
+          signature: "sha256:..."
+          triggers:
+            - condition: "battery.level < 20"
+          steps:
+            - action: "reduce_background_apps"
+              params: { aggressive: false }
+            - action: "adjust_brightness"
+              params: { level: 0.3 }
+          rollback:
+            - action: "restore_settings"
+
+  - type: textarea
+    id: safety_measures
+    attributes:
+      label: "Mesures de sécurité"
+      description: "Safeguards et protections mise en place"
+      placeholder: "Dry-run, rollback, permissions, validation, limites..."
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: "Fonctionnalités automation"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Scripts transactionnels (atomicité)"
+        - label: "Système de rollback automatique"
+        - label: "Mode dry-run/simulation"
+        - label: "Audit log complet"
+        - label: "Gestion des dépendances"
+        - label: "Hooks before/after"
+        - label: "Notifications avant/après exécution"
+        - label: "Logs d'exécution détaillés"
+        - label: "Simulation d'impact"
+        - label: "Gestion des doublons"
+        - label: "Hash d'impact/signature"
+        - label: "Paramétrage fin par étape"
+        - label: "Badge d'état automation"
+        - label: "Gestion des risques"
+        - label: "Reporting d'exécution"
+        - label: "Multi-step avec points de contrôle"
+        - label: "Hooks de monitoring"
+        - label: "Mode SAFE/AGGRESSIVE"
+        - label: "Gestion avancée des erreurs"
+        - label: "Fallback automatique"
+
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: "Niveau de risque"
+      description: "Impact potentiel de l'automation"
+      options:
+        - "🟢 Bas (lecture seule, non invasif)"
+        - "🟡 Moyen (modifications réversibles)"
+        - "🟠 Élevé (changements système)"
+        - "🔴 Critique (impacts majeurs)"
+
+  - type: textarea
+    id: testing_strategy
+    attributes:
+      label: "Stratégie de test"
+      description: "Comment valider l'automation"
+      placeholder: "Tests unitaires, scénarios, environnements de test..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Conditions pour valider l'automation"
+      placeholder: "Efficacité, sécurité, réversibilité, monitoring..."

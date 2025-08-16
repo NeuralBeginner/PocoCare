@@ -1,0 +1,125 @@
+name: "🧪 Module Tests & CI/CD - Qualité & Intégration"
+description: "Template pour les tâches liées aux tests, CI/CD et assurance qualité"
+title: "[TESTS-CICD] "
+labels: ["module:tests", "ci-cd", "quality"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧪 Module Tests & CI/CD
+        
+        Template pour les tests, CI/CD et assurance qualité
+
+  - type: dropdown
+    id: test_type
+    attributes:
+      label: "Type de test"
+      description: "Quelle catégorie de test"
+      options:
+        - "🧪 Tests unitaires"
+        - "🔗 Tests d'intégration"
+        - "🎭 Tests UI/Compose"
+        - "⚡ Tests de performance"
+        - "🔒 Tests de sécurité"
+        - "🎯 Property-based testing"
+        - "🌪️ Fuzzing"
+        - "📊 Tests de couverture"
+        - "🤖 Tests automatisés"
+        - "📱 Tests sur devices"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cicd_component
+    attributes:
+      label: "Composant CI/CD"
+      description: "Quel élément du pipeline"
+      options:
+        - "🏗️ Build automatisé"
+        - "🧪 Exécution tests"
+        - "🔒 Scans sécurité"
+        - "📊 Rapports coverage"
+        - "📦 Génération artefacts"
+        - "🏷️ Release notes auto"
+        - "📋 SBOM generation"
+        - "🚪 Quality gates"
+        - "🔔 Notifications"
+        - "📈 Métriques qualité"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description test/CI-CD"
+      description: "Détail de ce qui doit être testé ou automatisé"
+      placeholder: "Décrire les scénarios, objectifs, critères de succès..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: test_scenarios
+    attributes:
+      label: "Scénarios de test"
+      description: "Cas de test spécifiques"
+      placeholder: |
+        Ex:
+        - Test nominal: collecte métriques batterie
+        - Test erreur: permission refusée
+        - Test limite: mémoire faible
+        - Test stress: charge intensive
+
+  - type: checkboxes
+    id: testing_features
+    attributes:
+      label: "Fonctionnalités tests/CI-CD"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Tests unitaires complets"
+        - label: "Property-based testing"
+        - label: "Tests UI Compose"
+        - label: "Fuzzing sécurisé"
+        - label: "Tests de sécurité"
+        - label: "Benchmarks performance"
+        - label: "Coverage 90%+"
+        - label: "Rapports nightly"
+        - label: "Quality gates CI"
+        - label: "Scan sécurité automatique"
+        - label: "Coverage gates"
+        - label: "Changelog automatique"
+        - label: "SBOM génération"
+        - label: "Artefacts sauvegardés"
+        - label: "Annotations PR automatiques"
+        - label: "Notifications auto"
+        - label: "Matrix testing (devices/APIs)"
+        - label: "Release notes auto"
+        - label: "Badge qualité"
+        - label: "Métriques historiques"
+
+  - type: dropdown
+    id: coverage_target
+    attributes:
+      label: "Objectif coverage"
+      description: "Pourcentage de couverture cible"
+      options:
+        - "📊 90%+ (élevé)"
+        - "📊 80-89% (bon)"
+        - "📊 70-79% (acceptable)"
+        - "📊 60-69% (minimum)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: automation_strategy
+    attributes:
+      label: "Stratégie d'automatisation"
+      description: "Comment automatiser les tests/CI-CD"
+      placeholder: "GitHub Actions, triggers, environnements, déploiement..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Conditions pour valider la qualité"
+      placeholder: "Coverage, performance, sécurité, stabilité..."

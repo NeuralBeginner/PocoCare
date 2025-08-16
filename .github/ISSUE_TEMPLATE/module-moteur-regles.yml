@@ -1,0 +1,122 @@
+name: "⚙️ Module Moteur de Règles - DSL & Automation"
+description: "Template pour les tâches liées au moteur de règles (DSL YAML, seuils, corrélations, alertes)"
+title: "[REGLES] "
+labels: ["module:regles", "dsl", "automation", "rules"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚙️ Module Moteur de Règles
+        
+        Template pour le développement du moteur de règles avec DSL YAML
+
+  - type: dropdown
+    id: rule_type
+    attributes:
+      label: "Type de règle"
+      description: "Quelle catégorie de règle est concernée"
+      options:
+        - "🎯 Seuils et limites (CPU, RAM, batterie)"
+        - "🔗 Corrélations multi-métriques"
+        - "🚨 Alertes et notifications"
+        - "💡 Recommandations automatiques"
+        - "🔄 Dépendances et enchaînements"
+        - "⚖️ Priorités et arbitrage"
+        - "🛡️ Exceptions et cas particuliers"
+        - "🧪 Dry-run et simulation"
+        - "↩️ Rollback et annulation"
+        - "🪝 Hooks et callbacks"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: "Complexité de la règle"
+      description: "Niveau de complexité estimé"
+      options:
+        - "🟢 Simple (condition unique)"
+        - "🟡 Moyenne (conditions multiples)"
+        - "🟠 Complexe (logique avancée)"
+        - "🔴 Très complexe (IA/ML intégrée)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description de la règle"
+      description: "Détail de la logique métier et du comportement attendu"
+      placeholder: "Décrire précisément quand la règle s'active, what it does, impact attendu..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: yaml_specification
+    attributes:
+      label: "Spécification DSL YAML"
+      description: "Structure YAML de la règle (draft ou finale)"
+      placeholder: |
+        Ex:
+        rule:
+          name: "battery_critical_alert"
+          triggers:
+            - metric: "battery.level"
+              condition: "< 15"
+              duration: "5min"
+          actions:
+            - type: "notification"
+              priority: "high"
+              message: "Batterie critique"
+          metadata:
+            tags: ["battery", "critical"]
+
+  - type: textarea
+    id: conditions
+    attributes:
+      label: "Conditions d'activation"
+      description: "Conditions précises pour déclencher la règle"
+      placeholder: "Seuils, durées, contextes, prérequis..."
+
+  - type: textarea
+    id: actions
+    attributes:
+      label: "Actions à exécuter"
+      description: "Ce que fait la règle quand elle se déclenche"
+      placeholder: "Notifications, optimisations, collecte de données, etc."
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: "Fonctionnalités du moteur"
+      description: "Cocher toutes les fonctionnalités requises"
+      options:
+        - label: "Ajout dynamique de règles"
+        - label: "Patch à chaud (hot reload)"
+        - label: "Priorisation automatique"
+        - label: "Système de fallback"
+        - label: "Logs détaillés des décisions"
+        - label: "Mode simulation/dry-run"
+        - label: "Gestion des conflits de règles"
+        - label: "Reporting d'exécution"
+        - label: "Versioning des règles"
+        - label: "Audit trail complet"
+        - label: "Performance monitoring"
+        - label: "Rollback automatique"
+        - label: "Validation de syntaxe YAML"
+        - label: "Testing framework pour règles"
+
+  - type: textarea
+    id: testing_strategy
+    attributes:
+      label: "Stratégie de test"
+      description: "Comment tester cette règle efficacement"
+      placeholder: "Tests unitaires, scénarios, données de test, edge cases..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Conditions pour valider la règle"
+      placeholder: "Performance, fiabilité, logs, documentation..."

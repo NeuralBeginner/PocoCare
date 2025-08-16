@@ -1,0 +1,13 @@
+include ':app'
+include ':modules:collecte-metrics'
+include ':modules:stockage-donnees'
+include ':modules:moteur-regles'
+include ':modules:ia-ml'
+include ':modules:automations-playbooks'
+include ':modules:securite-permissions'
+include ':modules:configuration-flags'
+include ':modules:observabilite-logs'
+include ':modules:ui-ux'
+include ':modules:privacy-compliance'
+
+rootProject.name = "PocoCare Ultimate"

@@ -1,0 +1,102 @@
+name: "📊 Module Collecte Métriques - Monitoring & Données"
+description: "Template pour les tâches liées à la collecte de métriques système et applicatives"
+title: "[COLLECTE] "
+labels: ["module:collecte", "metrics", "monitoring"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📊 Module Collecte Métriques
+        
+        Template pour la collecte de métriques système (CPU, RAM, batterie, stockage, température, réseau, etc.)
+
+  - type: dropdown
+    id: metric_type
+    attributes:
+      label: "Type de métrique"
+      description: "Quelle catégorie de métrique est concernée"
+      options:
+        - "🔋 Batterie (niveau, température, cycles, santé)"
+        - "💾 CPU (usage, fréquence, cores, throttling)"
+        - "🧠 RAM (usage, disponible, swap, cache)"
+        - "💽 Stockage (espace, I/O, santé, cache)"
+        - "🌡️ Température (CPU, batterie, système)"
+        - "📶 Réseau (WiFi, mobile, consommation, débit)"
+        - "📱 Système (uptime, logs, crashes, permissions)"
+        - "🔒 Sécurité (permissions, apps, trackers)"
+        - "⚙️ Configuration (settings, flags, profils)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: collection_mode
+    attributes:
+      label: "Mode de collecte"
+      description: "Comment cette métrique doit être collectée"
+      options:
+        - "⏰ Périodique (intervalle fixe)"
+        - "🎯 Sur événement (trigger spécifique)"
+        - "🤚 À la demande (utilisateur/système)"
+        - "🧠 Adaptative (algorithme intelligent)"
+        - "🔄 Sur changement (delta detection)"
+        - "🚀 Au démarrage (boot/init)"
+        - "⚠️ Sur seuil critique (emergency)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description de la métrique"
+      description: "Détail de ce qui doit être collecté et pourquoi"
+      placeholder: "Décrire précisément la métrique, sa source, son format, sa fréquence..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_structure
+    attributes:
+      label: "Structure des données"
+      description: "Format et structure des données collectées"
+      placeholder: |
+        Ex: 
+        {
+          "timestamp": "ISO8601",
+          "battery_level": "percentage",
+          "temperature": "celsius",
+          "metadata": {...}
+        }
+
+  - type: textarea
+    id: technical_specs
+    attributes:
+      label: "Spécifications techniques"
+      description: "APIs Android, permissions, limitations, optimisations"
+      placeholder: "APIs système utilisées, permissions requises, gestion des erreurs..."
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: "Fonctionnalités requises"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Collecte de base (données brutes)"
+        - label: "Mode debug (logs détaillés)"
+        - label: "Gestion d'erreurs de collecte"
+        - label: "Export NDJSON/CSV"
+        - label: "Backup automatique"
+        - label: "Quotas et rotation"
+        - label: "Purge automatique avec notification"
+        - label: "Gestion cold/hot data"
+        - label: "Anonymisation des données"
+        - label: "Compression et optimisation"
+        - label: "Monitoring de la collecte"
+        - label: "Métriques de performance"
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Conditions spécifiques pour valider cette fonctionnalité"
+      placeholder: "Tests unitaires, benchmarks, validation des données, etc."

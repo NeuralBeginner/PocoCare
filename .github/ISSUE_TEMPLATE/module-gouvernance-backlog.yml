@@ -1,0 +1,94 @@
+name: "📋 Module Gouvernance & Backlog - Gestion Projet"
+description: "Template pour les tâches liées à la gouvernance, backlog et gestion de projet"
+title: "[GOUVERNANCE] "
+labels: ["module:gouvernance", "backlog", "management"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 Module Gouvernance & Backlog
+        
+        Template pour la gouvernance, gestion du backlog et du projet
+
+  - type: dropdown
+    id: governance_area
+    attributes:
+      label: "Domaine gouvernance"
+      description: "Quelle zone de gouvernance"
+      options:
+        - "📋 Gestion backlog"
+        - "🗺️ Roadmap et planification"
+        - "🎯 Milestones et jalons"
+        - "🏷️ Tags et labels"
+        - "✅ Templates et checklists"
+        - "🔄 Mise à jour dynamique"
+        - "🔔 Notifications contributeurs"
+        - "📊 Badges progression"
+        - "📈 Métriques projet"
+        - "🔗 Synchronisation auto"
+        - "⚖️ Gestion priorités"
+        - "🔗 Gestion dépendances"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description gouvernance"
+      description: "Détail de l'amélioration ou processus"
+      placeholder: "Décrire l'objectif, l'impact sur l'équipe, les bénéfices..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: governance_features
+    attributes:
+      label: "Fonctionnalités gouvernance"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Roadmap phasée structurée"
+        - label: "Backlog automatiquement structuré"
+        - label: "Génération automatique issues GitHub"
+        - label: "Tagging automatique"
+        - label: "Checklists dynamiques"
+        - label: "Templates standardisés"
+        - label: "Mise à jour temps réel"
+        - label: "Notifications automatiques"
+        - label: "Badges progression visuel"
+        - label: "Historique complet issues"
+        - label: "Liens milestone-issue"
+        - label: "Synchronisation bi-directionnelle"
+        - label: "Gestion priorités intelligente"
+        - label: "Détection dépendances"
+        - label: "Logs backlog détaillés"
+        - label: "Reporting avancement"
+        - label: "Visualisation backlog"
+        - label: "Historique complet"
+        - label: "Filtres et pagination"
+        - label: "Métriques équipe"
+
+  - type: dropdown
+    id: automation_level
+    attributes:
+      label: "Niveau d'automatisation"
+      description: "Degré d'automatisation souhaité"
+      options:
+        - "🤖 Complètement automatique"
+        - "🔄 Semi-automatique (validation)"
+        - "🤚 Manuel avec assistance"
+        - "📊 Reporting automatique seulement"
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: "Parties prenantes"
+      description: "Qui est concerné par cette gouvernance"
+      placeholder: "Développeurs, product owners, utilisateurs, management..."
+
+  - type: textarea
+    id: success_metrics
+    attributes:
+      label: "Métriques de succès"
+      description: "Comment mesurer l'efficacité"
+      placeholder: "Velocity, lead time, satisfaction équipe, qualité livrables..."

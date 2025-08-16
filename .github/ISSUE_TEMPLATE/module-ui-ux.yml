@@ -1,0 +1,116 @@
+name: "🎨 Module UI/UX - Interface Utilisateur"
+description: "Template pour les tâches liées à l'interface utilisateur et l'expérience"
+title: "[UI-UX] "
+labels: ["module:ui-ux", "interface", "compose"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎨 Module UI/UX - Interface Utilisateur
+        
+        Template pour l'interface utilisateur avec Jetpack Compose
+
+  - type: dropdown
+    id: ui_component
+    attributes:
+      label: "Composant UI"
+      description: "Quel élément d'interface"
+      options:
+        - "🏠 Dashboard principal"
+        - "📊 Pages de domaine (batterie, CPU, RAM)"
+        - "📈 Graphiques et visualisations"
+        - "⚙️ Paramètres et personnalisation"
+        - "🔔 Notifications et alertes"
+        - "🎛️ États UI (loading, error, success)"
+        - "🎯 Navigation et routing"
+        - "🎨 Thèmes et styles"
+        - "♿ Accessibilité"
+        - "📱 Responsive design"
+        - "🧪 Composants réutilisables"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ui_priority
+    attributes:
+      label: "Priorité UX"
+      description: "Importance pour l'expérience utilisateur"
+      options:
+        - "🔴 Critique (core functionality)"
+        - "🟠 Importante (major feature)"
+        - "🟡 Normale (standard feature)"
+        - "🟢 Nice-to-have (enhancement)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description UI/UX"
+      description: "Détail de l'interface et de l'expérience"
+      placeholder: "Décrire l'interface, les interactions, le comportement attendu..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_stories
+    attributes:
+      label: "User Stories"
+      description: "Scénarios d'utilisation"
+      placeholder: |
+        Ex:
+        - En tant qu'utilisateur, je veux voir l'état de ma batterie en un coup d'œil
+        - En tant qu'expert, je veux accéder aux détails techniques
+        - En tant que développeur, je veux débugger facilement
+
+  - type: checkboxes
+    id: ui_features
+    attributes:
+      label: "Fonctionnalités UI/UX"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Interface intuitive et claire"
+        - label: "Animations fluides"
+        - label: "Responsive design (orientations)"
+        - label: "Dark/Light mode"
+        - label: "Personnalisation avancée"
+        - label: "Accessibilité (TalkBack)"
+        - label: "Navigation clavier"
+        - label: "Adaptation couleurs/contraste"
+        - label: "Focus order optimisé"
+        - label: "Gestion des widgets"
+        - label: "Configuration seuils visuels"
+        - label: "Gestion des profils UI"
+        - label: "Import/Export profils"
+        - label: "Logs configuration UI"
+        - label: "Badge d'état interface"
+        - label: "Messages pédagogiques"
+        - label: "Tooltips contextuels"
+        - label: "Onboarding interactif"
+
+  - type: dropdown
+    id: device_support
+    attributes:
+      label: "Support appareils"
+      description: "Compatibilité écrans/appareils"
+      options:
+        - "📱 Smartphone standard"
+        - "📱 Petit écran (< 5 pouces)"
+        - "📱 Grand écran (> 6 pouces)"
+        - "📱 Pliable/flexible"
+        - "⌚ Wear OS (si applicable)"
+
+  - type: textarea
+    id: design_specs
+    attributes:
+      label: "Spécifications design"
+      description: "Contraintes techniques et visuelles"
+      placeholder: "Material Design, couleurs, typographie, espacements..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Comment valider l'interface"
+      placeholder: "Tests utilisateurs, accessibilité, performance, responsive..."

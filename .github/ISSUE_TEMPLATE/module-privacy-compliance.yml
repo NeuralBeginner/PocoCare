@@ -1,0 +1,105 @@
+name: "🔐 Module Privacy & Compliance - Conformité RGPD"
+description: "Template pour les tâches liées à la confidentialité et conformité réglementaire"
+title: "[PRIVACY] "
+labels: ["module:privacy", "compliance", "rgpd"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔐 Module Privacy & Compliance
+        
+        Template pour la confidentialité, RGPD et conformité réglementaire
+
+  - type: dropdown
+    id: compliance_area
+    attributes:
+      label: "Domaine conformité"
+      description: "Quelle zone de conformité"
+      options:
+        - "📋 Consentements utilisateur"
+        - "🗂️ Gestion données personnelles"
+        - "🔒 Anonymisation et pseudonymisation"
+        - "📤 Export données (portabilité)"
+        - "🗑️ Suppression données (droit à l'oubli)"
+        - "📊 Transparency et traçabilité"
+        - "🏛️ Base légale traitement"
+        - "🌍 Transferts internationaux"
+        - "👥 Droits des personnes"
+        - "📝 Documentation conformité"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: regulation
+    attributes:
+      label: "Réglementation"
+      description: "Quelle réglementation applicable"
+      options:
+        - "🇪🇺 RGPD (Union Européenne)"
+        - "🇺🇸 CCPA (Californie)"
+        - "🇧🇷 LGPD (Brésil)"
+        - "🇨🇦 PIPEDA (Canada)"
+        - "📱 Google Play Store Policies"
+        - "🍎 Apple App Store Guidelines"
+        - "🌍 Autres réglementations"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description conformité"
+      description: "Détail des exigences et implémentation"
+      placeholder: "Décrire les obligations légales, les données concernées, les mesures à implémenter..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy_features
+    attributes:
+      label: "Fonctionnalités privacy"
+      description: "Cocher toutes les mesures de conformité nécessaires"
+      options:
+        - label: "Consentement granulaire (opt-in/opt-out)"
+        - label: "Privacy by design"
+        - label: "Minimisation des données"
+        - label: "Chiffrement bout en bout"
+        - label: "Anonymisation automatique"
+        - label: "Pseudonymisation réversible"
+        - label: "Export données personnelles"
+        - label: "Suppression sécurisée"
+        - label: "Logs d'audit RGPD"
+        - label: "Notification violations"
+        - label: "Documentation traitement"
+        - label: "Analyse d'impact (DPIA)"
+        - label: "Certification/labels"
+        - label: "Formation équipes"
+        - label: "Veille réglementaire"
+        - label: "Tests conformité"
+
+  - type: textarea
+    id: data_mapping
+    attributes:
+      label: "Cartographie des données"
+      description: "Quelles données sont concernées"
+      placeholder: |
+        Ex:
+        - Données techniques: métriques batterie, CPU, RAM
+        - Données comportement: usage apps, préférences
+        - Identifiants: ID appareil, comptes utilisateur
+        - Localisation: si applicable
+
+  - type: textarea
+    id: legal_basis
+    attributes:
+      label: "Base légale"
+      description: "Justification légale du traitement"
+      placeholder: "Consentement, intérêt légitime, contrat, obligation légale..."
+
+  - type: textarea
+    id: compliance_validation
+    attributes:
+      label: "Validation conformité"
+      description: "Comment vérifier la conformité"
+      placeholder: "Audits, tests, certifications, reviews juridiques..."
