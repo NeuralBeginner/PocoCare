@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PocoCare</string>
+    <string name="app_description">Outil de diagnostic, nettoyage et optimisation pour HyperOS (Poco X7 Pro)</string>
+</resources>
