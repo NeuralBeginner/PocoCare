@@ -1,0 +1,127 @@
+name: "📚 Module Documentation & Support - Aide & Formation"
+description: "Template pour les tâches liées à la documentation et support utilisateur"
+title: "[DOCUMENTATION] "
+labels: ["module:documentation", "support", "help"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Module Documentation & Support
+        
+        Template pour la documentation, aide utilisateur et support
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: "Type de documentation"
+      description: "Quelle catégorie de documentation"
+      options:
+        - "📖 Documentation utilisateur"
+        - "⚙️ Documentation technique"
+        - "🚀 Guide de démarrage"
+        - "🎓 Tutoriels interactifs"
+        - "❓ FAQ dynamique"
+        - "📝 Changelog"
+        - "🔧 Guide contribution"
+        - "📋 Release notes"
+        - "🏗️ Documentation API"
+        - "🎯 Onboarding"
+        - "🆘 Support technique"
+        - "📊 Glossaire technique"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: "Public cible"
+      description: "À qui s'adresse cette documentation"
+      options:
+        - "👤 Utilisateurs finaux"
+        - "👨‍💻 Développeurs"
+        - "🔧 Contributeurs"
+        - "🎯 Product owners"
+        - "🆘 Support technique"
+        - "🤖 IA/Copilot"
+        - "🌍 Communauté open source"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description documentation"
+      description: "Contenu et objectif de la documentation"
+      placeholder: "Décrire ce qui doit être documenté, pourquoi, comment..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_outline
+    attributes:
+      label: "Plan de contenu"
+      description: "Structure et sections principales"
+      placeholder: |
+        Ex:
+        1. Introduction et objectifs
+        2. Prérequis et installation
+        3. Guide pas à pas
+        4. Exemples pratiques
+        5. Troubleshooting
+        6. Références avancées
+
+  - type: checkboxes
+    id: doc_features
+    attributes:
+      label: "Fonctionnalités documentation"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Documentation intégrée app"
+        - label: "Onboarding interactif"
+        - label: "Changelog Keep a Changelog"
+        - label: "Release notes automatiques"
+        - label: "Guide contribution détaillé"
+        - label: "FAQ dynamique/recherchable"
+        - label: "Glossaire technique"
+        - label: "Docstrings dans code"
+        - label: "Documentation contextuelle"
+        - label: "Accès docs depuis code"
+        - label: "Annotations PR automatiques"
+        - label: "Notifications releases"
+        - label: "Support utilisateur intégré"
+        - label: "Formulaires feedback"
+        - label: "Export logs pour support"
+        - label: "Tutoriels interactifs"
+        - label: "Messages pédagogiques"
+        - label: "Aide contextuelle"
+        - label: "Recherche documentation"
+        - label: "Versioning documentation"
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: "Format documentation"
+      description: "Comment présenter la documentation"
+      options:
+        - "📝 Markdown (GitHub)"
+        - "🌐 Site web (Docusaurus/GitBook)"
+        - "📱 In-app help"
+        - "🎥 Vidéos/screencasts"
+        - "🖼️ Infographies"
+        - "🎮 Tutoriels interactifs"
+        - "📊 Diagrammes/schémas"
+
+  - type: textarea
+    id: maintenance_strategy
+    attributes:
+      label: "Stratégie de maintenance"
+      description: "Comment maintenir à jour la documentation"
+      placeholder: "Automatisation, responsabilités, fréquence de révision..."
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: "Critères de succès"
+      description: "Comment mesurer l'efficacité de la documentation"
+      placeholder: "Feedback utilisateurs, réduction tickets support, adoption features..."

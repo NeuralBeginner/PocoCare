@@ -1,0 +1,107 @@
+name: "🚨 Module Erreurs & Maintenance - Gestion d'incidents"
+description: "Template pour les tâches liées à la gestion d'erreurs et maintenance"
+title: "[ERREURS] "
+labels: ["module:erreurs", "maintenance", "incidents"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚨 Module Erreurs & Maintenance
+        
+        Template pour la gestion d'erreurs, incidents et maintenance
+
+  - type: dropdown
+    id: error_category
+    attributes:
+      label: "Catégorie d'erreur"
+      description: "Quel type d'erreur ou maintenance"
+      options:
+        - "💥 Crash application"
+        - "🔌 Erreurs de connectivité"
+        - "🗄️ Erreurs base de données"
+        - "🔋 Problèmes hardware"
+        - "🔒 Erreurs permissions"
+        - "🤖 Échecs IA/ML"
+        - "⚙️ Erreurs configuration"
+        - "📊 Problèmes collecte données"
+        - "🔄 Échecs automations"
+        - "🛠️ Maintenance préventive"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Sévérité"
+      description: "Impact de l'erreur"
+      options:
+        - "🔴 Critique (app inutilisable)"
+        - "🟠 Majeure (fonctionnalité bloquée)"
+        - "🟡 Moyenne (dégradation)"
+        - "🟢 Mineure (cosmétique)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description erreur/maintenance"
+      description: "Détail du problème et impact"
+      placeholder: "Décrire le symptôme, la cause, l'impact utilisateur..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: "Étapes de reproduction"
+      description: "Comment reproduire l'erreur"
+      placeholder: |
+        1. Action 1
+        2. Action 2
+        3. Résultat observé vs attendu
+
+  - type: checkboxes
+    id: error_features
+    attributes:
+      label: "Fonctionnalités gestion erreurs"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Détection automatique erreurs"
+        - label: "Logging détaillé avec contexte"
+        - label: "Rapport d'erreur automatique"
+        - label: "Recovery automatique"
+        - label: "Fallback gracieux"
+        - label: "Retry avec backoff"
+        - label: "Circuit breaker pattern"
+        - label: "Health checks continus"
+        - label: "Monitoring proactif"
+        - label: "Alertes temps réel"
+        - label: "Dashboard d'incidents"
+        - label: "Escalation automatique"
+        - label: "Post-mortem automatisé"
+        - label: "Métriques MTTR/MTBF"
+        - label: "Tests de chaos engineering"
+        - label: "Maintenance prédictive"
+
+  - type: textarea
+    id: recovery_strategy
+    attributes:
+      label: "Stratégie de récupération"
+      description: "Comment récupérer de l'erreur"
+      placeholder: "Retry, fallback, reset, escalation..."
+
+  - type: textarea
+    id: prevention_measures
+    attributes:
+      label: "Mesures de prévention"
+      description: "Comment éviter la récurrence"
+      placeholder: "Validation, tests, monitoring, amélioration code..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Comment valider la résolution"
+      placeholder: "Tests, monitoring, métriques, feedback utilisateurs..."

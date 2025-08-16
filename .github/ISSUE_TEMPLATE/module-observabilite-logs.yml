@@ -1,0 +1,99 @@
+name: "📊 Module Observabilité & Logs - Monitoring"
+description: "Template pour les tâches liées à l'observabilité, logs et monitoring"
+title: "[OBSERVABILITE] "
+labels: ["module:observabilite", "logging", "monitoring"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📊 Module Observabilité & Logs
+        
+        Template pour l'observabilité, logs structurés et monitoring
+
+  - type: dropdown
+    id: log_category
+    attributes:
+      label: "Catégorie de logs"
+      description: "Quel type de logs/monitoring"
+      options:
+        - "🖥️ Logs système (debug, info, warning, error)"
+        - "📈 Métriques performance"
+        - "🔍 Traces d'exécution"
+        - "🚨 Alertes et événements"
+        - "👤 Actions utilisateur"
+        - "🤖 Décisions IA/ML"
+        - "🔄 Automations et playbooks"
+        - "🔒 Événements sécurité"
+        - "⚙️ Changements configuration"
+        - "📱 État modules/système"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description observabilité"
+      description: "Détail de ce qui doit être observé/loggé"
+      placeholder: "Décrire les événements, métriques, contexte à capturer..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: log_structure
+    attributes:
+      label: "Structure des logs"
+      description: "Format et champs des logs structurés"
+      placeholder: |
+        Ex JSON:
+        {
+          "timestamp": "2024-01-01T12:00:00Z",
+          "level": "INFO",
+          "module": "battery",
+          "event": "optimization_triggered",
+          "context": {...},
+          "metadata": {...}
+        }
+
+  - type: checkboxes
+    id: observability_features
+    attributes:
+      label: "Fonctionnalités observabilité"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Logs structurés (JSON)"
+        - label: "Niveaux de log configurables"
+        - label: "Rotation automatique logs"
+        - label: "Compression et archivage"
+        - label: "Export logs (NDJSON/CSV)"
+        - label: "Recherche et filtrage"
+        - label: "Agrégation et métriques"
+        - label: "Alertes sur patterns"
+        - label: "Dashboard intégré"
+        - label: "Corrélation d'événements"
+        - label: "Traces distribuées"
+        - label: "Profiling performance"
+        - label: "Health checks automatiques"
+        - label: "Monitoring ressources"
+        - label: "Badge statut système"
+        - label: "Notifications proactives"
+
+  - type: dropdown
+    id: retention
+    attributes:
+      label: "Rétention des logs"
+      description: "Durée de conservation"
+      options:
+        - "📅 1 jour (debug/développement)"
+        - "📅 7 jours (opérationnel)"
+        - "📅 30 jours (audit)"
+        - "📅 90 jours (compliance)"
+        - "📅 1 an (archivage)"
+        - "🔄 Configurable utilisateur"
+
+  - type: textarea
+    id: performance_impact
+    attributes:
+      label: "Impact performance"
+      description: "Contraintes de performance pour les logs"
+      placeholder: "CPU, mémoire, stockage, réseau utilisés..."

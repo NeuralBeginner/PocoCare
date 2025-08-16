@@ -1,0 +1,118 @@
+name: "💾 Module Stockage Données - Room & DataStore"
+description: "Template pour les tâches liées au stockage de données (Room, DataStore Proto, gestion des données)"
+title: "[STOCKAGE] "
+labels: ["module:stockage", "database", "datastore"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💾 Module Stockage Données
+        
+        Template pour le stockage de données avec Room et DataStore Proto
+
+  - type: dropdown
+    id: storage_type
+    attributes:
+      label: "Type de stockage"
+      description: "Quelle technologie de stockage est concernée"
+      options:
+        - "🗄️ Room Database (métriques, historiques, logs)"
+        - "⚙️ DataStore Proto (configs, feature flags, préférences)"
+        - "📁 Stockage fichier (exports, backups, cache)"
+        - "☁️ Synchronisation cloud (backup, restore)"
+        - "🔄 Migration/Schema (versions, upgrades)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: data_category
+    attributes:
+      label: "Catégorie de données"
+      description: "Quel type de données sera stocké"
+      options:
+        - "📊 Métriques système (CPU, RAM, batterie)"
+        - "📈 Historiques et tendances"
+        - "🎬 Actions et événements"
+        - "📝 Logs et traces"
+        - "🏃 État des modules"
+        - "🔔 Notifications et alertes"
+        - "⚙️ Configurations utilisateur"
+        - "🚩 Feature flags et overrides"
+        - "👤 Profils et préférences"
+        - "🔒 Consentements et permissions"
+        - "📋 Métadonnées et cache"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description fonctionnelle"
+      description: "Détail de ce qui doit être stocké et comment"
+      placeholder: "Décrire les entités, relations, contraintes, performances attendues..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: schema_design
+    attributes:
+      label: "Design du schéma"
+      description: "Structure des tables/entités et relations"
+      placeholder: |
+        Ex Room:
+        @Entity
+        data class BatteryMetric(
+          @PrimaryKey val timestamp: Long,
+          val level: Int,
+          val temperature: Float
+        )
+        
+        Ex DataStore:
+        message UserPreferences {
+          bool dark_mode = 1;
+          int32 collection_frequency = 2;
+        }
+
+  - type: textarea
+    id: performance_requirements
+    attributes:
+      label: "Exigences de performance"
+      description: "Contraintes de performance, volumes, latence"
+      placeholder: "Taille max DB, fréquence d'écriture, temps de réponse max..."
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: "Fonctionnalités de stockage"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Stockage de base (CRUD operations)"
+        - label: "Rotation automatique des logs"
+        - label: "Purge automatique avec règles"
+        - label: "Export NDJSON/CSV/XML"
+        - label: "Visualisation des données dans l'app"
+        - label: "Import/Export des configurations"
+        - label: "Backup cloud et local"
+        - label: "Gestion cold/hot data"
+        - label: "Simulation de purges"
+        - label: "Notifications de quota"
+        - label: "Support multi-utilisateur"
+        - label: "Badge d'état du stockage"
+        - label: "Chiffrement des données sensibles"
+        - label: "Compression des données"
+        - label: "Index et optimisations"
+
+  - type: textarea
+    id: migration_strategy
+    attributes:
+      label: "Stratégie de migration"
+      description: "Comment gérer les évolutions de schéma"
+      placeholder: "Scripts de migration, versioning, compatibilité..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Tests, benchmarks, validation des données"
+      placeholder: "Tests unitaires, tests de performance, validation d'intégrité..."

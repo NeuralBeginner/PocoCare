@@ -1,0 +1,96 @@
+name: "🚩 Module Configuration & Feature Flags - Paramétrage"
+description: "Template pour les tâches liées à la configuration, feature flags et overrides"
+title: "[CONFIG] "
+labels: ["module:config", "feature-flags", "settings"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚩 Module Configuration & Feature Flags
+        
+        Template pour la gestion des configurations, feature flags et overrides
+
+  - type: dropdown
+    id: config_type
+    attributes:
+      label: "Type de configuration"
+      description: "Quelle catégorie de configuration"
+      options:
+        - "🏗️ Configuration build-time"
+        - "🌐 Remote manifest signé"
+        - "📱 Override local utilisateur"
+        - "🚩 Feature flags dynamiques"
+        - "🔄 Versioning et rollback"
+        - "🛠️ Panel développeur"
+        - "📝 Logs de modifications"
+        - "🔔 Notifications changements"
+        - "🧪 Simulation activation/désactivation"
+        - "🔌 Compatibilité plugins"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description configuration"
+      description: "Détail de la configuration ou feature flag"
+      placeholder: "Décrire l'objectif, l'impact, les valeurs possibles..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: config_schema
+    attributes:
+      label: "Schéma de configuration"
+      description: "Structure des données de configuration"
+      placeholder: |
+        Ex DataStore Proto:
+        message AppConfig {
+          bool enable_ml_predictions = 1;
+          int32 collection_frequency_seconds = 2;
+          string ui_theme = 3;
+          repeated string enabled_modules = 4;
+        }
+
+  - type: checkboxes
+    id: config_features
+    attributes:
+      label: "Fonctionnalités configuration"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Configuration centralisée"
+        - label: "Remote manifest signé"
+        - label: "Override local sécurisé"
+        - label: "Versioning des configs"
+        - label: "Rollback automatique"
+        - label: "Panel développeur intégré"
+        - label: "Logs détaillés modifications"
+        - label: "Notifications changements"
+        - label: "Simulation avant activation"
+        - label: "Reporting configuration"
+        - label: "Gestion compatibilité plugins"
+        - label: "Détection conflits config"
+        - label: "Badge d'état configuration"
+        - label: "Export/Import configurations"
+        - label: "Validation schéma config"
+        - label: "Hot reload configuration"
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: "Portée configuration"
+      description: "À quoi s'applique cette configuration"
+      options:
+        - "🌍 Globale (toute l'app)"
+        - "🧩 Module spécifique"
+        - "👤 Utilisateur individuel"
+        - "📱 Appareil/session"
+        - "🔄 Runtime temporaire"
+
+  - type: textarea
+    id: validation_rules
+    attributes:
+      label: "Règles de validation"
+      description: "Comment valider la configuration"
+      placeholder: "Contraintes, ranges, dépendances, validations..."

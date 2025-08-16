@@ -1,0 +1,128 @@
+name: "🤖 Module IA/ML - Intelligence Artificielle"
+description: "Template pour les tâches liées à l'IA/ML (prédictions, scoring, recommandations, anomalies)"
+title: "[IA-ML] "
+labels: ["module:ia", "machine-learning", "ai", "predictions"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🤖 Module IA/ML - Intelligence Artificielle
+        
+        Template pour le développement des fonctionnalités d'intelligence artificielle et machine learning
+
+  - type: dropdown
+    id: ai_type
+    attributes:
+      label: "Type d'IA/ML"
+      description: "Quelle catégorie d'intelligence artificielle"
+      options:
+        - "🔮 Prédiction de problèmes (pannes, crashes)"
+        - "📊 Scoring et évaluation (performance, santé)"
+        - "💡 Recommandations personnalisées"
+        - "🕵️ Détection d'anomalies"
+        - "📈 Drift detection (changements modèles)"
+        - "🎯 Feature importance (variables clés)"
+        - "🎰 Reinforcement Learning Bandit"
+        - "🔄 Ordonnancement optimal des actions"
+        - "📱 Adaptation comportement utilisateur"
+        - "🧠 Apprentissage continu"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ml_approach
+    attributes:
+      label: "Approche ML"
+      description: "Quelle méthode de machine learning"
+      options:
+        - "🌳 Supervised Learning (classification/régression)"
+        - "🔍 Unsupervised Learning (clustering/détection)"
+        - "🎮 Reinforcement Learning (bandit/Q-learning)"
+        - "📊 Statistiques/Heuristiques"
+        - "🔗 Ensemble methods"
+        - "🧠 Deep Learning (si nécessaire)"
+        - "⚡ Real-time inference"
+        - "📚 Transfer Learning"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description du problème IA"
+      description: "Problème métier à résoudre avec l'IA"
+      placeholder: "Décrire le problème, les données disponibles, l'objectif business..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_sources
+    attributes:
+      label: "Sources de données"
+      description: "Quelles données seront utilisées pour l'entraînement"
+      placeholder: |
+        Ex:
+        - Métriques batterie (niveau, température, cycles)
+        - Historique CPU/RAM (usage, pics, patterns)
+        - Actions utilisateur (apps, paramètres)
+        - Contexte (heure, localisation, usage)
+
+  - type: textarea
+    id: model_specs
+    attributes:
+      label: "Spécifications du modèle"
+      description: "Architecture et contraintes techniques"
+      placeholder: |
+        - Taille max du modèle (pour mobile)
+        - Latence d'inférence requise
+        - Fréquence de mise à jour
+        - Ressources consommées
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: "Fonctionnalités IA/ML"
+      description: "Cocher toutes les fonctionnalités nécessaires"
+      options:
+        - label: "Entraînement de modèle de base"
+        - label: "Inférence en temps réel"
+        - label: "Logs de décision détaillés"
+        - label: "Mode dry-run/simulation"
+        - label: "Fallback statique (sans IA)"
+        - label: "Simulation d'impact prédictions"
+        - label: "Audit logs complets"
+        - label: "Rapport de drift detection"
+        - label: "Logs d'apprentissage continu"
+        - label: "Gestion des versions de modèles"
+        - label: "Rollback de modèles"
+        - label: "Monitoring performance ML"
+        - label: "Métriques business (précision, rappel)"
+        - label: "Badge IA (statut, confiance)"
+        - label: "Explicabilité des décisions"
+
+  - type: textarea
+    id: evaluation_metrics
+    attributes:
+      label: "Métriques d'évaluation"
+      description: "Comment mesurer la performance du modèle"
+      placeholder: |
+        Ex:
+        - Précision/Rappel/F1-score
+        - MAE/RMSE pour prédictions
+        - Temps de réponse
+        - Satisfaction utilisateur
+
+  - type: textarea
+    id: deployment_strategy
+    attributes:
+      label: "Stratégie de déploiement"
+      description: "Comment déployer et maintenir le modèle"
+      placeholder: "A/B testing, gradual rollout, monitoring, rollback..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Conditions pour valider la solution IA"
+      placeholder: "Performance minimale, tests A/B, validation métier..."

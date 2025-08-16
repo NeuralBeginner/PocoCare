@@ -1,0 +1,96 @@
+name: "🚀 Backlog Global - Planification et Roadmap"
+description: "Template pour la gestion globale du backlog, roadmap et planification du projet PocoCare"
+title: "[BACKLOG] "
+labels: ["backlog", "roadmap", "planning"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Backlog Global - Planification et Roadmap
+        
+        Ce template permet de gérer la planification globale, les milestones et la roadmap du projet PocoCare Ultimate.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorité"
+      description: "Niveau de priorité de cette tâche"
+      options:
+        - "🔴 Critique - Bloquant"
+        - "🟠 Haute - Important"
+        - "🟡 Moyenne - Normal"
+        - "🟢 Basse - Nice to have"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: "Phase de développement"
+      description: "Dans quelle phase ce ticket s'inscrit-il"
+      options:
+        - "Phase 1 - Architecture & Infrastructure"
+        - "Phase 2 - Modules Core (Collecte, Stockage, Règles)"
+        - "Phase 3 - IA/ML & Automations"
+        - "Phase 4 - UI/UX & Interface"
+        - "Phase 5 - Sécurité & Conformité"
+        - "Phase 6 - Tests & CI/CD"
+        - "Phase 7 - Documentation & Support"
+        - "Phase 8 - Optimisation & Maintenance"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description détaillée"
+      description: "Description complète de la tâche, objectifs et critères d'acceptation"
+      placeholder: "Décrire précisément ce qui doit être fait, pourquoi et comment..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: modules
+    attributes:
+      label: "Modules concernés"
+      description: "Quels modules/composants sont impactés par cette tâche"
+      placeholder: "Ex: collecte-metrics, stockage, moteur-regles, ui-dashboard..."
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dépendances"
+      description: "Autres tickets ou tâches qui doivent être complétés avant"
+      placeholder: "Références aux issues/PRs/milestones requis..."
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: "Livrables attendus"
+      description: "Ce qui doit être produit à l'issue de cette tâche"
+      placeholder: "Code, documentation, tests, configurations..."
+
+  - type: dropdown
+    id: estimation
+    attributes:
+      label: "Estimation effort"
+      description: "Estimation de la complexité/temps requis"
+      options:
+        - "🟢 Simple (1-2 jours)"
+        - "🟡 Moyen (3-5 jours)"
+        - "🟠 Complexe (1-2 semaines)"
+        - "🔴 Très complexe (2+ semaines)"
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Cocher tous les critères requis"
+      options:
+        - label: "Code développé et testé"
+        - label: "Documentation mise à jour"
+        - label: "Tests automatisés ajoutés"
+        - label: "Review de code effectuée"
+        - label: "Conformité aux standards projet"
+        - label: "Impact mesuré et validé"
